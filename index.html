@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GarageFit : quelle voiture rentre dans mon garage ?</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Entrez les dimensions de votre garage et découvrez parmi 169 voitures populaires celles qui rentrent, avec un plan vu de dessus et les marges en centimètres.">
+<link rel="canonical" href="https://www.garagefit.fr/">
+<meta property="og:title" content="GarageFit : quelle voiture rentre dans mon garage ?">
+<meta property="og:description" content="Entrez les dimensions de votre garage et découvrez parmi 169 voitures populaires celles qui rentrent, avec un plan vu de dessus et les marges en centimètres.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.garagefit.fr/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "GarageFit", "url": "https://www.garagefit.fr/", "applicationCategory": "UtilitiesApplication", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>GarageFit</a>
+    <nav aria-label="Navigation principale">
+      <a href="index.html#calculateur">Calculateur</a>
+      <a href="index.html#modeles">Tous les modèles</a>
+      <a href="index.html#mesurer">Bien mesurer</a>
+    </nav>
+  </div>
+  <div class="ruler" aria-hidden="true"></div>
+</header>
+<main>
+  <section id="calculateur">
+    <div class="wrap">
+      <p class="eyebrow">Calculateur gratuit · 169 modèles</p>
+      <h1>Quelle voiture rentre dans <span class="stripe">votre garage</span> ?</h1>
+      <p class="lede">Entrez les mesures intérieures de votre garage. GarageFit vérifie pour chaque modèle la longueur, le passage de la porte, la hauteur et la place pour ouvrir une portière.</p>
+      <div class="calc" style="margin-top:28px">
+        <div style="display:grid;gap:20px;min-width:0">
+          <form class="panel" onsubmit="return false" aria-label="Dimensions du garage">
+            <div class="fields">
+      <div class="fieldset-title">Intérieur du garage</div>
+      <div class="field">
+        <label for="g-len">Longueur</label>
+        <div class="input-unit"><input id="g-len" type="text" inputmode="decimal" autocomplete="off" value="550"><span>cm</span></div>
+        <span class="hint">Du mur du fond à la porte fermée</span>
+      </div>
+      <div class="field">
+        <label for="g-wid">Largeur</label>
+        <div class="input-unit"><input id="g-wid" type="text" inputmode="decimal" autocomplete="off" value="300"><span>cm</span></div>
+        <span class="hint">D'un mur à l'autre, au plus étroit</span>
+      </div>
+      <div class="fieldset-title">Ouverture de la porte</div>
+      <div class="field">
+        <label for="g-dwid">Largeur</label>
+        <div class="input-unit"><input id="g-dwid" type="text" inputmode="decimal" autocomplete="off" value="240"><span>cm</span></div>
+        <span class="hint">Entre les montants</span>
+      </div>
+      <div class="field">
+        <label for="g-dhei">Hauteur</label>
+        <div class="input-unit"><input id="g-dhei" type="text" inputmode="decimal" autocomplete="off" value="200"><span>cm</span></div>
+        <span class="hint">Sous la porte ouverte</span>
+      </div>
+    </div>
+    <div class="fields margins">
+      <div class="fieldset-title">Marges souhaitées</div>
+      <div class="field range-field">
+        <label for="g-mlen">Longueur <output id="g-mlen-out" for="g-mlen">40 cm</output></label>
+        <input id="g-mlen" type="range" min="0" max="100" step="5" value="40">
+        <span class="hint">0 à 100 cm, devant et derrière au total</span>
+      </div>
+      <div class="field range-field">
+        <label for="g-mwid">Largeur <output id="g-mwid-out" for="g-mwid">40 cm</output></label>
+        <input id="g-mwid" type="range" min="20" max="60" step="5" value="40">
+        <span class="hint">20 à 60 cm de chaque côté, pour ouvrir une portière</span>
+      </div>
+    </div>
+    <div class="presets" aria-label="Garages types">
+      <button type="button" class="btn btn-small" data-preset="box">Box 2,50 × 5,00 m</button>
+      <button type="button" class="btn btn-small" data-preset="standard">Garage 3,00 × 5,50 m</button>
+      <button type="button" class="btn btn-small" data-preset="grand">Grand 3,50 × 6,00 m</button>
+    </div>
+          </form>
+          <div class="panel">
+            <p class="eyebrow">Modèle sélectionné</p>
+            <h3 id="detail-title">&nbsp;</h3>
+            <div class="plan-stack">
+              <div id="plan"></div>
+              <div id="detail"></div>
+            </div>
+            <div class="detail-actions">
+              <a class="btn btn-small" id="detail-link" href="#">Voir la fiche complète</a>
+              <a class="btn btn-small" id="detail-brand" href="#" rel="noopener" target="_blank">Site du constructeur ↗</a>
+            </div>
+          </div>
+        </div>
+        <div style="min-width:0">
+          <div class="toolbar">
+            <input id="q" type="search" placeholder="Rechercher un modèle" aria-label="Rechercher un modèle">
+            <select id="seg" aria-label="Catégorie"><option value="">Toutes catégories</option><option value="Berline">Berline</option><option value="Break">Break</option><option value="Citadine">Citadine</option><option value="Compacte">Compacte</option><option value="Grand SUV">Grand SUV</option><option value="Ludospace">Ludospace</option><option value="Monospace">Monospace</option><option value="SUV compact">SUV compact</option><option value="SUV familial">SUV familial</option></select>
+          </div>
+          <div class="toolbar chips" role="group" aria-label="Filtrer par résultat">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">Tous<span class="count"></span></button>
+            <button type="button" class="chip" data-filter="ok" aria-pressed="false">Rentre<span class="count"></span></button>
+            <button type="button" class="chip" data-filter="juste" aria-pressed="false">Juste<span class="count"></span></button>
+            <button type="button" class="chip" data-filter="non" aria-pressed="false">Ne rentre pas<span class="count"></span></button>
+          </div>
+          <ul class="results" id="results" aria-live="polite"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mesurer">
+    <div class="wrap">
+      <h2>Bien mesurer son garage</h2>
+      <div class="steps">
+        <div><h3>Au plus étroit</h3><p>Mesurez la largeur entre les obstacles qui dépassent : poteau, établi, compteur, étagères. C'est cette largeur qui compte pour ouvrir une portière.</p></div>
+        <div><h3>Porte ouverte</h3><p>Une porte basculante ou sectionnelle ouverte réduit la hauteur et parfois la longueur utile. Mesurez sous la porte en position ouverte.</p></div>
+        <div><h3>Gardez de la marge</h3><p>Prévoyez de la marge au-delà de la voiture : 40 cm en longueur et 40 cm de chaque côté conviennent à la plupart des gens. Réglez-les avec les curseurs du calculateur.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="cta">
+      <p class="eyebrow">Avant d'acheter</p>
+      <h2>Combien coûtera l'assurance de votre future voiture ?</h2>
+      <p>Le prix de l'assurance change beaucoup d'un modèle à l'autre. Comparez les devis avant de signer, c'est gratuit et sans engagement.</p>
+      <div class="actions">
+        <a class="btn btn-mark" href="https://www.lesfurets.com" rel="sponsored noopener" target="_blank">Comparer les assurances auto</a>
+        <a class="btn" href="https://www.lacentrale.fr" rel="sponsored noopener" target="_blank">Voir les annonces d'occasion</a>
+        
+      </div>
+      <p class="disclosure">Liens partenaires : GarageFit peut être rémunéré, sans surcoût pour vous.</p>
+    </div></div>
+  </section>
+
+  <section id="modeles">
+    <div class="wrap">
+      <h2>Tous les modèles</h2>
+      <p class="muted" style="margin:0 0 20px">Chaque fiche donne les dimensions, la taille de garage conseillée et le verdict pour trois garages types.</p>
+      <div class="brands"><div class="brand-group"><h3>Audi</h3><ul><li><a href="modeles/audi-a1-sportback.html">A1 Sportback</a><span class="len">4,03 m</span></li><li><a href="modeles/audi-a3-sportback.html">A3 Sportback</a><span class="len">4,35 m</span></li><li><a href="modeles/audi-a4-2015-2024.html">A4 (2015-2024)</a><span class="len">4,76 m</span></li><li><a href="modeles/audi-q2.html">Q2</a><span class="len">4,21 m</span></li><li><a href="modeles/audi-q3.html">Q3</a><span class="len">4,53 m</span></li><li><a href="modeles/audi-q3-2018-2025.html">Q3 (2018-2025)</a><span class="len">4,48 m</span></li><li><a href="modeles/audi-q5.html">Q5</a><span class="len">4,72 m</span></li></ul></div><div class="brand-group"><h3>BMW</h3><ul><li><a href="modeles/bmw-serie-1.html">Série 1</a><span class="len">4,36 m</span></li><li><a href="modeles/bmw-serie-3.html">Série 3</a><span class="len">4,71 m</span></li><li><a href="modeles/bmw-x1.html">X1</a><span class="len">4,50 m</span></li><li><a href="modeles/bmw-x3.html">X3</a><span class="len">4,75 m</span></li></ul></div><div class="brand-group"><h3>BYD</h3><ul><li><a href="modeles/byd-atto-3.html">Atto 3</a><span class="len">4,46 m</span></li><li><a href="modeles/byd-dolphin.html">Dolphin</a><span class="len">4,29 m</span></li><li><a href="modeles/byd-seal-u.html">Seal U</a><span class="len">4,79 m</span></li></ul></div><div class="brand-group"><h3>Citroën</h3><ul><li><a href="modeles/citroen-berlingo.html">Berlingo</a><span class="len">4,40 m</span></li><li><a href="modeles/citroen-c1-2014-2022.html">C1 (2014-2022)</a><span class="len">3,47 m</span></li><li><a href="modeles/citroen-c3.html">C3</a><span class="len">4,01 m</span></li><li><a href="modeles/citroen-c3-2016-2024.html">C3 (2016-2024)</a><span class="len">4,00 m</span></li><li><a href="modeles/citroen-c3-aircross.html">C3 Aircross</a><span class="len">4,39 m</span></li><li><a href="modeles/citroen-c3-aircross-2017-2024.html">C3 Aircross (2017-2024)</a><span class="len">4,16 m</span></li><li><a href="modeles/citroen-c4.html">C4</a><span class="len">4,36 m</span></li><li><a href="modeles/citroen-c5-aircross.html">C5 Aircross</a><span class="len">4,65 m</span></li><li><a href="modeles/citroen-c5-aircross-2018-2025.html">C5 Aircross (2018-2025)</a><span class="len">4,50 m</span></li></ul></div><div class="brand-group"><h3>Cupra</h3><ul><li><a href="modeles/cupra-born.html">Born</a><span class="len">4,34 m</span></li><li><a href="modeles/cupra-formentor.html">Formentor</a><span class="len">4,45 m</span></li></ul></div><div class="brand-group"><h3>Dacia</h3><ul><li><a href="modeles/dacia-bigster.html">Bigster</a><span class="len">4,57 m</span></li><li><a href="modeles/dacia-duster.html">Duster</a><span class="len">4,34 m</span></li><li><a href="modeles/dacia-duster-2018-2024.html">Duster (2018-2024)</a><span class="len">4,34 m</span></li><li><a href="modeles/dacia-jogger.html">Jogger</a><span class="len">4,55 m</span></li><li><a href="modeles/dacia-sandero.html">Sandero</a><span class="len">4,10 m</span></li><li><a href="modeles/dacia-sandero-2012-2020.html">Sandero (2012-2020)</a><span class="len">4,06 m</span></li><li><a href="modeles/dacia-sandero-stepway.html">Sandero Stepway</a><span class="len">4,10 m</span></li><li><a href="modeles/dacia-spring.html">Spring</a><span class="len">3,73 m</span></li></ul></div><div class="brand-group"><h3>Fiat</h3><ul><li><a href="modeles/fiat-500-2016-2024.html">500 (2016-2024)</a><span class="len">3,55 m</span></li><li><a href="modeles/fiat-500x-2014-2024.html">500X (2014-2024)</a><span class="len">4,26 m</span></li><li><a href="modeles/fiat-500e.html">500e</a><span class="len">3,63 m</span></li><li><a href="modeles/fiat-600.html">600</a><span class="len">4,17 m</span></li><li><a href="modeles/fiat-grande-panda.html">Grande Panda</a><span class="len">4,00 m</span></li><li><a href="modeles/fiat-panda.html">Panda</a><span class="len">3,69 m</span></li></ul></div><div class="brand-group"><h3>Ford</h3><ul><li><a href="modeles/ford-fiesta-2017-2023.html">Fiesta (2017-2023)</a><span class="len">4,04 m</span></li><li><a href="modeles/ford-focus-2018-2025.html">Focus (2018-2025)</a><span class="len">4,38 m</span></li><li><a href="modeles/ford-kuga.html">Kuga</a><span class="len">4,63 m</span></li><li><a href="modeles/ford-puma.html">Puma</a><span class="len">4,19 m</span></li></ul></div><div class="brand-group"><h3>Hyundai</h3><ul><li><a href="modeles/hyundai-bayon.html">Bayon</a><span class="len">4,18 m</span></li><li><a href="modeles/hyundai-ioniq-5.html">Ioniq 5</a><span class="len">4,66 m</span></li><li><a href="modeles/hyundai-kona.html">Kona</a><span class="len">4,36 m</span></li><li><a href="modeles/hyundai-kona-2017-2023.html">Kona (2017-2023)</a><span class="len">4,21 m</span></li><li><a href="modeles/hyundai-tucson.html">Tucson</a><span class="len">4,51 m</span></li><li><a href="modeles/hyundai-i10.html">i10</a><span class="len">3,67 m</span></li><li><a href="modeles/hyundai-i20.html">i20</a><span class="len">4,07 m</span></li></ul></div><div class="brand-group"><h3>Jeep</h3><ul><li><a href="modeles/jeep-avenger.html">Avenger</a><span class="len">4,08 m</span></li><li><a href="modeles/jeep-compass.html">Compass</a><span class="len">4,55 m</span></li><li><a href="modeles/jeep-renegade.html">Renegade</a><span class="len">4,24 m</span></li></ul></div><div class="brand-group"><h3>Kia</h3><ul><li><a href="modeles/kia-ceed.html">Ceed</a><span class="len">4,31 m</span></li><li><a href="modeles/kia-ev3.html">EV3</a><span class="len">4,30 m</span></li><li><a href="modeles/kia-ev6.html">EV6</a><span class="len">4,70 m</span></li><li><a href="modeles/kia-niro.html">Niro</a><span class="len">4,43 m</span></li><li><a href="modeles/kia-picanto.html">Picanto</a><span class="len">3,60 m</span></li><li><a href="modeles/kia-sportage.html">Sportage</a><span class="len">4,54 m</span></li><li><a href="modeles/kia-sportage-2016-2021.html">Sportage (2016-2021)</a><span class="len">4,49 m</span></li><li><a href="modeles/kia-stonic.html">Stonic</a><span class="len">4,17 m</span></li></ul></div><div class="brand-group"><h3>Land Rover</h3><ul><li><a href="modeles/land-rover-defender-110.html">Defender 110</a><span class="len">4,76 m</span></li><li><a href="modeles/land-rover-range-rover-evoque.html">Range Rover Evoque</a><span class="len">4,37 m</span></li></ul></div><div class="brand-group"><h3>MG</h3><ul><li><a href="modeles/mg-hs.html">HS</a><span class="len">4,67 m</span></li><li><a href="modeles/mg-mg3.html">MG3</a><span class="len">4,11 m</span></li><li><a href="modeles/mg-mg4.html">MG4</a><span class="len">4,29 m</span></li><li><a href="modeles/mg-zs.html">ZS</a><span class="len">4,43 m</span></li><li><a href="modeles/mg-zs-ev.html">ZS EV</a><span class="len">4,32 m</span></li></ul></div><div class="brand-group"><h3>Mercedes-Benz</h3><ul><li><a href="modeles/mercedes-benz-classe-a.html">Classe A</a><span class="len">4,42 m</span></li><li><a href="modeles/mercedes-benz-classe-c.html">Classe C</a><span class="len">4,75 m</span></li><li><a href="modeles/mercedes-benz-glc.html">GLC</a><span class="len">4,72 m</span></li></ul></div><div class="brand-group"><h3>Mini</h3><ul><li><a href="modeles/mini-cooper.html">Cooper</a><span class="len">3,88 m</span></li><li><a href="modeles/mini-countryman.html">Countryman</a><span class="len">4,43 m</span></li></ul></div><div class="brand-group"><h3>Nissan</h3><ul><li><a href="modeles/nissan-juke.html">Juke</a><span class="len">4,21 m</span></li><li><a href="modeles/nissan-micra-2017-2023.html">Micra (2017-2023)</a><span class="len">4,00 m</span></li><li><a href="modeles/nissan-qashqai.html">Qashqai</a><span class="len">4,42 m</span></li><li><a href="modeles/nissan-qashqai-2014-2021.html">Qashqai (2014-2021)</a><span class="len">4,39 m</span></li><li><a href="modeles/nissan-x-trail.html">X-Trail</a><span class="len">4,68 m</span></li></ul></div><div class="brand-group"><h3>Opel</h3><ul><li><a href="modeles/opel-astra.html">Astra</a><span class="len">4,37 m</span></li><li><a href="modeles/opel-corsa.html">Corsa</a><span class="len">4,06 m</span></li><li><a href="modeles/opel-crossland-2017-2024.html">Crossland (2017-2024)</a><span class="len">4,22 m</span></li><li><a href="modeles/opel-grandland.html">Grandland</a><span class="len">4,65 m</span></li><li><a href="modeles/opel-mokka.html">Mokka</a><span class="len">4,15 m</span></li></ul></div><div class="brand-group"><h3>Peugeot</h3><ul><li><a href="modeles/peugeot-108-2014-2021.html">108 (2014-2021)</a><span class="len">3,48 m</span></li><li><a href="modeles/peugeot-2008.html">2008</a><span class="len">4,30 m</span></li><li><a href="modeles/peugeot-2008-2013-2019.html">2008 (2013-2019)</a><span class="len">4,16 m</span></li><li><a href="modeles/peugeot-208.html">208</a><span class="len">4,05 m</span></li><li><a href="modeles/peugeot-208-2012-2019.html">208 (2012-2019)</a><span class="len">3,96 m</span></li><li><a href="modeles/peugeot-3008.html">3008</a><span class="len">4,54 m</span></li><li><a href="modeles/peugeot-3008-2016-2023.html">3008 (2016-2023)</a><span class="len">4,45 m</span></li><li><a href="modeles/peugeot-308.html">308</a><span class="len">4,37 m</span></li><li><a href="modeles/peugeot-308-2013-2021.html">308 (2013-2021)</a><span class="len">4,25 m</span></li><li><a href="modeles/peugeot-408.html">408</a><span class="len">4,69 m</span></li><li><a href="modeles/peugeot-5008.html">5008</a><span class="len">4,79 m</span></li><li><a href="modeles/peugeot-5008-2017-2024.html">5008 (2017-2024)</a><span class="len">4,64 m</span></li><li><a href="modeles/peugeot-508.html">508</a><span class="len">4,75 m</span></li><li><a href="modeles/peugeot-508-sw.html">508 SW</a><span class="len">4,78 m</span></li><li><a href="modeles/peugeot-rifter.html">Rifter</a><span class="len">4,41 m</span></li></ul></div><div class="brand-group"><h3>Renault</h3><ul><li><a href="modeles/renault-4-e-tech.html">4 E-Tech</a><span class="len">4,14 m</span></li><li><a href="modeles/renault-5-e-tech.html">5 E-Tech</a><span class="len">3,92 m</span></li><li><a href="modeles/renault-arkana.html">Arkana</a><span class="len">4,57 m</span></li><li><a href="modeles/renault-austral.html">Austral</a><span class="len">4,53 m</span></li><li><a href="modeles/renault-captur.html">Captur</a><span class="len">4,24 m</span></li><li><a href="modeles/renault-clio.html">Clio</a><span class="len">4,12 m</span></li><li><a href="modeles/renault-clio-2012-2019.html">Clio (2012-2019)</a><span class="len">4,06 m</span></li><li><a href="modeles/renault-clio-2019-2025.html">Clio (2019-2025)</a><span class="len">4,05 m</span></li><li><a href="modeles/renault-espace.html">Espace</a><span class="len">4,75 m</span></li><li><a href="modeles/renault-grand-scenic-2016-2022.html">Grand Scénic (2016-2022)</a><span class="len">4,63 m</span></li><li><a href="modeles/renault-kadjar-2015-2022.html">Kadjar (2015-2022)</a><span class="len">4,45 m</span></li><li><a href="modeles/renault-kangoo.html">Kangoo</a><span class="len">4,49 m</span></li><li><a href="modeles/renault-megane-2016-2023.html">Mégane (2016-2023)</a><span class="len">4,36 m</span></li><li><a href="modeles/renault-megane-e-tech.html">Mégane E-Tech</a><span class="len">4,21 m</span></li><li><a href="modeles/renault-rafale.html">Rafale</a><span class="len">4,71 m</span></li><li><a href="modeles/renault-scenic-e-tech.html">Scenic E-Tech</a><span class="len">4,47 m</span></li><li><a href="modeles/renault-scenic-2016-2022.html">Scénic (2016-2022)</a><span class="len">4,41 m</span></li><li><a href="modeles/renault-symbioz.html">Symbioz</a><span class="len">4,41 m</span></li><li><a href="modeles/renault-twingo.html">Twingo</a><span class="len">3,79 m</span></li><li><a href="modeles/renault-twingo-2014-2025.html">Twingo (2014-2025)</a><span class="len">3,62 m</span></li><li><a href="modeles/renault-zoe-2012-2024.html">Zoe (2012-2024)</a><span class="len">4,08 m</span></li></ul></div><div class="brand-group"><h3>Seat</h3><ul><li><a href="modeles/seat-arona.html">Arona</a><span class="len">4,16 m</span></li><li><a href="modeles/seat-ateca.html">Ateca</a><span class="len">4,38 m</span></li><li><a href="modeles/seat-ibiza.html">Ibiza</a><span class="len">4,07 m</span></li><li><a href="modeles/seat-leon.html">Leon</a><span class="len">4,37 m</span></li></ul></div><div class="brand-group"><h3>Skoda</h3><ul><li><a href="modeles/skoda-enyaq.html">Enyaq</a><span class="len">4,66 m</span></li><li><a href="modeles/skoda-fabia.html">Fabia</a><span class="len">4,11 m</span></li><li><a href="modeles/skoda-kamiq.html">Kamiq</a><span class="len">4,24 m</span></li><li><a href="modeles/skoda-karoq.html">Karoq</a><span class="len">4,39 m</span></li><li><a href="modeles/skoda-kodiaq.html">Kodiaq</a><span class="len">4,76 m</span></li><li><a href="modeles/skoda-kodiaq-2016-2024.html">Kodiaq (2016-2024)</a><span class="len">4,70 m</span></li><li><a href="modeles/skoda-octavia.html">Octavia</a><span class="len">4,70 m</span></li><li><a href="modeles/skoda-octavia-combi.html">Octavia Combi</a><span class="len">4,70 m</span></li><li><a href="modeles/skoda-scala.html">Scala</a><span class="len">4,36 m</span></li></ul></div><div class="brand-group"><h3>Suzuki</h3><ul><li><a href="modeles/suzuki-ignis.html">Ignis</a><span class="len">3,70 m</span></li><li><a href="modeles/suzuki-jimny.html">Jimny</a><span class="len">3,65 m</span></li><li><a href="modeles/suzuki-swift.html">Swift</a><span class="len">3,86 m</span></li><li><a href="modeles/suzuki-vitara.html">Vitara</a><span class="len">4,18 m</span></li></ul></div><div class="brand-group"><h3>Tesla</h3><ul><li><a href="modeles/tesla-model-3.html">Model 3</a><span class="len">4,72 m</span></li><li><a href="modeles/tesla-model-3-2019-2023.html">Model 3 (2019-2023)</a><span class="len">4,69 m</span></li><li><a href="modeles/tesla-model-y.html">Model Y</a><span class="len">4,79 m</span></li><li><a href="modeles/tesla-model-y-2021-2025.html">Model Y (2021-2025)</a><span class="len">4,75 m</span></li></ul></div><div class="brand-group"><h3>Toyota</h3><ul><li><a href="modeles/toyota-aygo-2014-2022.html">Aygo (2014-2022)</a><span class="len">3,46 m</span></li><li><a href="modeles/toyota-aygo-x.html">Aygo X</a><span class="len">3,78 m</span></li><li><a href="modeles/toyota-c-hr.html">C-HR</a><span class="len">4,36 m</span></li><li><a href="modeles/toyota-c-hr-2016-2023.html">C-HR (2016-2023)</a><span class="len">4,39 m</span></li><li><a href="modeles/toyota-corolla.html">Corolla</a><span class="len">4,37 m</span></li><li><a href="modeles/toyota-corolla-cross.html">Corolla Cross</a><span class="len">4,46 m</span></li><li><a href="modeles/toyota-corolla-touring-sports.html">Corolla Touring Sports</a><span class="len">4,65 m</span></li><li><a href="modeles/toyota-rav4.html">RAV4</a><span class="len">4,60 m</span></li><li><a href="modeles/toyota-yaris.html">Yaris</a><span class="len">3,94 m</span></li><li><a href="modeles/toyota-yaris-2011-2020.html">Yaris (2011-2020)</a><span class="len">3,94 m</span></li><li><a href="modeles/toyota-yaris-cross.html">Yaris Cross</a><span class="len">4,17 m</span></li></ul></div><div class="brand-group"><h3>Volkswagen</h3><ul><li><a href="modeles/volkswagen-golf.html">Golf</a><span class="len">4,28 m</span></li><li><a href="modeles/volkswagen-golf-2012-2020.html">Golf (2012-2020)</a><span class="len">4,26 m</span></li><li><a href="modeles/volkswagen-id-buzz.html">ID. Buzz</a><span class="len">4,71 m</span></li><li><a href="modeles/volkswagen-id-3.html">ID.3</a><span class="len">4,26 m</span></li><li><a href="modeles/volkswagen-id-4.html">ID.4</a><span class="len">4,58 m</span></li><li><a href="modeles/volkswagen-polo.html">Polo</a><span class="len">4,07 m</span></li><li><a href="modeles/volkswagen-t-cross.html">T-Cross</a><span class="len">4,13 m</span></li><li><a href="modeles/volkswagen-t-roc.html">T-Roc</a><span class="len">4,37 m</span></li><li><a href="modeles/volkswagen-t-roc-2017-2025.html">T-Roc (2017-2025)</a><span class="len">4,23 m</span></li><li><a href="modeles/volkswagen-taigo.html">Taigo</a><span class="len">4,27 m</span></li><li><a href="modeles/volkswagen-tiguan.html">Tiguan</a><span class="len">4,54 m</span></li><li><a href="modeles/volkswagen-tiguan-2016-2024.html">Tiguan (2016-2024)</a><span class="len">4,51 m</span></li><li><a href="modeles/volkswagen-touran.html">Touran</a><span class="len">4,53 m</span></li><li><a href="modeles/volkswagen-up-2011-2023.html">Up! (2011-2023)</a><span class="len">3,60 m</span></li></ul></div><div class="brand-group"><h3>Volvo</h3><ul><li><a href="modeles/volvo-ex30.html">EX30</a><span class="len">4,23 m</span></li><li><a href="modeles/volvo-xc40.html">XC40</a><span class="len">4,44 m</span></li><li><a href="modeles/volvo-xc60.html">XC60</a><span class="len">4,71 m</span></li><li><a href="modeles/volvo-xc90.html">XC90</a><span class="len">4,95 m</span></li></ul></div></div>
+    </div>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>GarageFit</strong> vous aide à vérifier qu'une voiture rentre dans votre garage avant de l'acheter.</p>
+    <p>Dimensions constructeur relevées sur automobiledimension.com, autotijd.be et cars-data.com : longueur, largeur hors rétroviseurs et hauteur à vide, sans barres ni coffre de toit. Quand les sources diffèrent, nous retenons la longueur et la hauteur les plus grandes. Les cotes varient selon la version et la finition : vérifiez la fiche technique exacte avant un achat.</p>
+    <p>Certains liens de ce site sont des liens affiliés : GarageFit peut percevoir une commission si vous demandez un devis ou achetez via ces liens, sans surcoût pour vous.</p>
+    <p>© 2026 GarageFit</p>
+  </div>
+</footer>
+<script src="assets/cars.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
