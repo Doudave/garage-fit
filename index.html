@@ -6,16 +6,16 @@
 <title>GarageFit : quelle voiture rentre dans mon garage ?</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Entrez les dimensions de votre garage et découvrez parmi 169 voitures populaires celles qui rentrent, avec un plan vu de dessus et les marges en centimètres.">
-<link rel="canonical" href="https://www.garagefit.fr/">
+<link rel="canonical" href="https://doudave.github.io/garage-fit/">
 <meta property="og:title" content="GarageFit : quelle voiture rentre dans mon garage ?">
 <meta property="og:description" content="Entrez les dimensions de votre garage et découvrez parmi 169 voitures populaires celles qui rentrent, avec un plan vu de dessus et les marges en centimètres.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.garagefit.fr/">
+<meta property="og:url" content="https://doudave.github.io/garage-fit/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "GarageFit", "url": "https://www.garagefit.fr/", "applicationCategory": "UtilitiesApplication", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "GarageFit", "url": "https://doudave.github.io/garage-fit/", "applicationCategory": "UtilitiesApplication", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script>
 </head>
 <body>
 <header class="site-head">
@@ -35,9 +35,8 @@
       <p class="eyebrow">Calculateur gratuit · 169 modèles</p>
       <h1>Quelle voiture rentre dans <span class="stripe">votre garage</span> ?</h1>
       <p class="lede">Entrez les mesures intérieures de votre garage. GarageFit vérifie pour chaque modèle la longueur, le passage de la porte, la hauteur et la place pour ouvrir une portière.</p>
-      <div class="calc" style="margin-top:28px">
-        <div style="display:grid;gap:20px;min-width:0">
-          <form class="panel" onsubmit="return false" aria-label="Dimensions du garage">
+      <div class="calc calc-3" style="margin-top:28px">
+          <form class="panel calc-garage" onsubmit="return false" aria-label="Dimensions du garage">
             <div class="fields">
       <div class="fieldset-title">Intérieur du garage</div>
       <div class="field">
@@ -81,7 +80,7 @@
       <button type="button" class="btn btn-small" data-preset="grand">Grand 3,50 × 6,00 m</button>
     </div>
           </form>
-          <div class="panel">
+          <div class="panel calc-model">
             <p class="eyebrow">Modèle sélectionné</p>
             <h3 id="detail-title">&nbsp;</h3>
             <div class="plan-stack">
@@ -93,8 +92,7 @@
               <a class="btn btn-small" id="detail-brand" href="#" rel="noopener" target="_blank">Site du constructeur ↗</a>
             </div>
           </div>
-        </div>
-        <div style="min-width:0">
+        <div class="calc-list">
           <div class="toolbar">
             <input id="q" type="search" placeholder="Rechercher un modèle" aria-label="Rechercher un modèle">
             <select id="seg" aria-label="Catégorie"><option value="">Toutes catégories</option><option value="Berline">Berline</option><option value="Break">Break</option><option value="Citadine">Citadine</option><option value="Compacte">Compacte</option><option value="Grand SUV">Grand SUV</option><option value="Ludospace">Ludospace</option><option value="Monospace">Monospace</option><option value="SUV compact">SUV compact</option><option value="SUV familial">SUV familial</option></select>

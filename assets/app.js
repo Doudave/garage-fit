@@ -141,7 +141,8 @@
     var link = document.getElementById("detail-link");
 
     var hash = (location.hash || "").replace("#", "");
-    if (hash && cars.some(function (c) { return c.s === hash; })) selected = hash;
+    var fromModel = false;
+    if (hash && cars.some(function (c) { return c.s === hash; })) { selected = hash; fromModel = true; }
 
     function render() {
       var g = readGarage("g-"), mg = readMargins("g-");
@@ -207,6 +208,11 @@
     document.querySelectorAll(".calc input[inputmode], .calc input[type=range]").forEach(function (i) { i.addEventListener("input", render); });
     bindPresets("g-", render);
     render();
+    // Retour depuis une fiche : afficher directement le modèle sélectionné
+    if (fromModel) {
+      var panel = title.closest(".panel");
+      if (panel) panel.scrollIntoView({ block: "start" });
+    }
   }
 
   // ---------- Fiche modèle : test avec ses propres mesures ----------

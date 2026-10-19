@@ -222,3 +222,35 @@ td.num { white-space: nowrap; }
 .hero-actions { margin-top: 18px; }
 .note { margin: 14px 0 0; padding: 10px 14px; background: var(--warn-bg); color: var(--ink); border-radius: var(--radius); max-width: 70ch; font-size: 0.93rem; }
 .source-line { margin: 10px 0 0; font-size: 0.8rem; color: var(--muted); }
+
+/* Calculateur en trois colonnes alignées : garage | modèle sélectionné | recherche et liste */
+.wrap { max-width: 1240px; }
+.calc-3 { grid-template-columns: minmax(0, 300px) minmax(0, 300px) minmax(0, 1fr); gap: 20px; }
+.calc-3 > * { min-width: 0; }
+.calc-model { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); }
+.calc-model .plan-stack .plan-svg { max-width: 200px; }
+.calc-list .results { max-height: 760px; }
+@media (max-width: 1100px) {
+  .calc-3 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .calc-list { grid-column: 1 / -1; }
+  .calc-model { position: static; }
+}
+@media (max-width: 680px) {
+  .calc-3 { grid-template-columns: minmax(0, 1fr); }
+}
+.range-field output { white-space: nowrap; flex-shrink: 0; }
+.range-field label { flex-wrap: wrap; }
+
+/* Ordre : garage | recherche et liste | modèle sélectionné */
+.calc-3 { grid-template-columns: minmax(0, 300px) minmax(0, 1fr) minmax(0, 300px); }
+.calc-garage { order: 1; }
+.calc-list { order: 2; }
+.calc-model { order: 3; }
+@media (max-width: 1100px) {
+  .calc-3 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .calc-model { order: 2; }
+  .calc-list { order: 3; }
+}
+@media (max-width: 680px) {
+  .calc-3 { grid-template-columns: minmax(0, 1fr); }
+}
